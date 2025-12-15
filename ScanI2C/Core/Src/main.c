@@ -408,5 +408,3 @@ int __io_putchar(int ch)
 {
   HAL_UART_Transmit(&huart2, &ch, 1, HAL_DELAY_TO_OUPUT);
 }
-
-HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
