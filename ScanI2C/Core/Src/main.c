@@ -65,7 +65,8 @@ static void MX_I2C2_Init(void);
 
 /* USER CODE BEGIN 0 */
   uint8_t i = 0, ret;
-  unsigned char Buffer[25] = {0};
+  #define BUF_SIZE  25
+  unsigned char Buffer[BUF_SIZE] = {0};
   unsigned char Space[]    = " - ";
   unsigned char StartMSG[] = "Début du scan du bus I2C:\r\n";
   unsigned char EndMSG[]   = "\r\nFin de scan\r\n\r\n";
@@ -115,7 +116,7 @@ int main(void)
         }
     	else if(ret == HAL_OK)
     	{
-    		sprintf(Buffer, "0x%X", i);
+    		snprintf(Buffer, BUF_SIZE - 1, "0x%X", i);
     		HAL_UART_Transmit(&huart2, Buffer, sizeof(Buffer), 10000);
     	}
     }
