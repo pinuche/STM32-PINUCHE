@@ -1,3 +1,3 @@
 # STM32-PINUCHE
 
-## A develloper
+## A developper
