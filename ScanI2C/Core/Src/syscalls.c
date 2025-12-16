@@ -32,7 +32,7 @@
 
 
 /* Variables */
-extern int __io_putchar(int ch) __attribute__((weak));
+extern int __io_putchar(char ch) __attribute__((weak));
 extern int __io_getchar(void) __attribute__((weak));
 
 

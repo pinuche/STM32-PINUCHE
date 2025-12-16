@@ -405,7 +405,7 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 #define HAL_DELAY_TO_OUPUT
-int __io_putchar(int ch)
+int __io_putchar(char ch)
 {
-  HAL_UART_Transmit(&huart2, &ch, 1, HAL_DELAY_TO_OUPUT);
+  HAL_UART_Transmit(&huart2, (const uint8_t *)&ch, 1, HAL_DELAY_TO_OUPUT);
 }
